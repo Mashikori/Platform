@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111214">
+  <title>Fitch.ai - Temukan game indie baru</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Fitch.ai beranda">
+      <span class="brand-mark">F</span>
+      <span>Fitch<span class="brand-dot">.ai</span></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a class="active" href="#discover">Temukan</a>
+      <a href="#browse">Jelajahi</a>
+      <a href="#popular">Populer</a>
+    </nav>
+
+    <div class="top-actions">
+      <button class="icon-button search-toggle" type="button" aria-label="Cari" title="Cari">
+        <i data-lucide="search"></i>
+      </button>
+      <button class="theme-toggle" type="button" aria-label="Ganti tema" title="Ganti tema">
+        <i class="theme-icon" data-lucide="moon"></i>
+      </button>
+      <button class="login-button" type="button">Masuk</button>
+      <button class="icon-button menu-button" type="button" aria-label="Menu" title="Menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="discover">
+      <div class="hero-copy">
+        <p class="eyebrow">KURASI HARI INI</p>
+        <h1>Game kecil,<br><span>imajinasi besar.</span></h1>
+        <p class="hero-description">Temukan pengalaman baru buatan kreator independen dari seluruh dunia.</p>
+        <button class="primary-button" type="button" data-scroll="gameGrid">
+          Jelajahi game
+          <i data-lucide="arrow-down-right"></i>
+        </button>
+      </div>
+
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1100&q=85" alt="Set ruang game yang berwarna neon">
+        <div class="hero-card">
+          <div>
+            <span class="status-dot"></span>
+            <span>Featured</span>
+          </div>
+          <strong>Hollow Signal</strong>
+          <span>Petualangan misteri</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog" id="browse">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">UNTUKMU</p>
+          <h2>Game pilihan</h2>
+        </div>
+        <button class="text-button" type="button" data-sort="popular">Lihat semua <i data-lucide="arrow-right"></i></button>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-box">
+          <i data-lucide="search"></i>
+          <input id="searchInput" type="search" placeholder="Cari game atau genre..." autocomplete="off">
+        </div>
+        <div class="filter-row" role="group" aria-label="Filter genre">
+          <button class="filter active" type="button" data-filter="All">Semua</button>
+          <button class="filter" type="button" data-filter="Adventure">Petualangan</button>
+          <button class="filter" type="button" data-filter="Arcade">Arcade</button>
+          <button class="filter" type="button" data-filter="Puzzle">Teka-teki</button>
+          <button class="filter" type="button" data-filter="Horror">Horor</button>
+        </div>
+      </div>
+
+      <div class="game-grid" id="gameGrid"></div>
+      <p class="empty-state" id="emptyState">Tidak ada game yang cocok dengan pencarianmu.</p>
+    </section>
+
+    <section class="popular-strip" id="popular">
+      <div>
+        <p class="eyebrow">TREN MINGGU INI</p>
+        <h2>Diunduh oleh komunitas</h2>
+      </div>
+      <div class="popular-list">
+        <article><span>01</span><strong>Neon Drift</strong><small>8.4k unduhan</small></article>
+        <article><span>02</span><strong>Moon Lumen</strong><small>7.1k unduhan</small></article>
+        <article><span>03</span><strong>Deep Static</strong><small>6.8k unduhan</small></article>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="game-dialog" id="gameDialog">
+    <button class="dialog-close icon-button" type="button" aria-label="Tutup"><i data-lucide="x"></i></button>
+    <div class="dialog-media"><img id="dialogImage" src="" alt=""></div>
+    <div class="dialog-content">
+      <p class="dialog-genre" id="dialogGenre"></p>
+      <h2 id="dialogTitle"></h2>
+      <p id="dialogDescription"></p>
+      <div class="dialog-meta">
+        <span><i data-lucide="star"></i> <strong id="dialogRating"></strong></span>
+        <span><i data-lucide="download"></i> <strong id="dialogDownloads"></strong></span>
+      </div>
+      <button class="primary-button play-button" type="button">Mainkan sekarang <i data-lucide="play"></i></button>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
